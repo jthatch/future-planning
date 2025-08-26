@@ -410,3 +410,112 @@ For easier transitions staying within the EU framework (especially beneficial fo
 - **Dubai:** $15-30k USD annually for excellent schools
 - **Ireland:** $20-25k USD annually for international schools
 - **UK (comparison):** $15-35k USD annually for private schools
+
+## Wife's Psychotherapy Career Prospects 💼
+
+**Critical consideration:** Your wife's Masters in Psychotherapy needs professional recognition in target countries.
+
+### Professional Licensing Requirements by Country
+
+#### 🇸🇬 Singapore - SELF-REGULATED SYSTEM
+**Licensing Status:**
+- **No mandatory government licensing** - profession is self-regulated
+- **Voluntary registration** through Singapore Psychological Society (SPS)
+- **APACS accreditation** preferred by employers (150 client hours + 20 supervision hours)
+
+**Requirements for Practice:**
+- Masters in Psychotherapy/Psychology/Counselling ✅ (Your wife qualifies)
+- Professional body registration recommended
+- No complex bureaucracy - can start practicing relatively quickly
+
+**Market Conditions:**
+- Growing mental health awareness
+- High demand for English-speaking therapists
+- Expatriate community provides client base
+- **Earning potential:** S$80-150+ per session
+
+#### 🇦🇪 Dubai - STRICT BUT ACHIEVABLE LICENSING
+**Licensing Authority:** Community Development Authority (CDA)
+
+**Requirements:**
+- **Masters degree** (psychology/psychotherapy) ✅ Your wife qualifies
+- **2+ years professional experience** required
+- **Degree attestation** from UK (bureaucratic but doable)
+- **DataFlow verification** for credential screening
+- **Professional licensing exam** at British University Dubai
+
+**Process Timeline:** 4-6 months for full licensing
+
+**Market Conditions:**
+- Large expatriate community needing services
+- Growing mental health acceptance
+- **High earning potential:** 400-800 AED per session
+- Private practice opportunities excellent
+
+#### 🇮🇪 Ireland - TRANSITIONING TO STATUTORY REGULATION
+**Current Status:**
+- **Self-regulated** by ~20 professional bodies
+- **Moving to statutory regulation** under CORU
+- **Level 8 qualification required** (Masters level) ✅ Your wife qualifies
+
+**Professional Bodies:**
+- **IACP (Irish Association for Counselling and Psychotherapy)** - main body
+- **Psychological Society of Ireland (PSI)** - for psychologists
+- EU recognition through **EuroPsy framework**
+
+**Advantages:**
+- **English-speaking market**
+- **EU qualification recognition**
+- **Wife's Romanian citizenship** provides immediate work rights
+- **Familiar regulatory environment**
+
+**Market Conditions:**
+- Strong demand for mental health services
+- Health Service Executive (HSE) opportunities
+- **Private practice:** €60-120+ per session
+
+#### 🇨🇾 Cyprus - EU PATHWAY
+**Licensing Through EU Recognition:**
+- **EuroPsy Certificate** provides EU-wide recognition
+- **European Certificate of Psychotherapy (ECP)** available
+- **Wife's Romanian citizenship** = automatic work rights
+
+**Requirements:**
+- Masters qualification ✅
+- Professional registration in EU member state
+- Possible additional local requirements
+
+#### 🇧🇬 Bulgaria - HOME ADVANTAGE
+**Ultimate Easy Path:**
+- **Wife's Romanian citizenship** = EU rights
+- **Low bureaucracy** for EU citizens
+- **Growing English-speaking market** in Sofia
+- **Very low cost of living** = higher relative income
+
+**Market Opportunity:**
+- Limited English-speaking therapists
+- Growing expatriate community
+- **Potential to build unique practice** serving international clients
+
+### Professional Development Recommendations
+
+#### Immediate Actions (Before Moving):
+1. **EuroPsy Application** - Begin EU-wide recognition process
+2. **Professional Portfolio** - Document all training, supervision, client hours
+3. **Continuing Education** - Additional certifications in target country approaches
+4. **Professional Insurance** - International coverage options
+
+#### Country-Specific Strategies:
+- **Singapore:** Join SPS early, network with expatriate community
+- **Dubai:** Begin degree attestation process immediately (takes 2+ months)
+- **Ireland:** IACP membership, familiarize with Irish counselling approaches
+- **EU Countries:** EuroPsy certificate opens all doors
+
+### Income Potential Comparison (Annual)
+- **Singapore:** $60-120k USD (high demand, premium pricing)
+- **Dubai:** $50-100k USD (tax-free, excellent for private practice)
+- **Ireland:** €40-80k (€50-65k average for established practitioners)
+- **Bulgaria:** €20-40k (but 70% lower living costs)
+- **UK baseline:** £35-60k for comparison
+
+**Key Insight:** Your wife's career prospects are excellent in all target countries, with Singapore and Dubai offering highest earning potential.
