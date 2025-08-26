@@ -519,3 +519,115 @@ For easier transitions staying within the EU framework (especially beneficial fo
 - **UK baseline:** £35-60k for comparison
 
 **Key Insight:** Your wife's career prospects are excellent in all target countries, with Singapore and Dubai offering highest earning potential.
+
+## Startup & Investment Visa Opportunities 🚀
+
+**Leveraging your tech success:** Your established business and income qualify you for several entrepreneur programs.
+
+### UAE Golden Visa Program
+**10-Year Residency for Tech Entrepreneurs**
+
+**Your Qualification Status:** ✅ **HIGHLY QUALIFIED**
+- Tech contractor with established business
+- AI/blockchain/digital technology focus areas
+- £298k turnover demonstrates economic contribution
+
+**Benefits:**
+- **10-year renewable visa** for entire family
+- **0% personal income tax** - keep all £174k income
+- **9% corporate tax maximum** vs UK's 25%
+- **Fast-track processing** and premium services
+- **100% foreign ownership** in free zones
+
+**Requirements:**
+- Demonstrated expertise in qualifying tech sectors
+- Evidence of economic benefit to UAE
+- Clean criminal record and health checks
+
+### Singapore EntrePass (Startup Visa)
+**Tech Innovation Pathway**
+
+**Your Qualification Status:** ✅ **QUALIFIED WITH CONDITIONS**
+- Need S$100k+ guaranteed funding OR government incubator backing
+- Minimum S$50k paid-up capital requirement
+- Must employ 3+ local staff OR 1 executive (S$3.9k+ salary)
+
+**Benefits:**
+- **Initial 2-year visa**, renewable based on performance
+- **Permanent residency pathway** after 2 years
+- **Territorial tax system** - structure foreign income advantageously
+- **Family inclusion** after 12 months
+
+**Timeline:** 8-week processing
+
+### Ireland Start-up Entrepreneur Programme (STEP)
+**EU Business Gateway**
+
+**Your Qualification Status:** ✅ **EASILY QUALIFIED**
+- €50k funding requirement (you have this)
+- Tech business fits innovation criteria
+- High-potential for job creation and revenue
+
+**Benefits:**
+- **Initial 2-year visa** + 3-year renewal option
+- **EU market access** for business expansion
+- **Low 12.5% corporate tax** rate
+- **Path to EU citizenship** for entire family
+- **Wife's Romanian citizenship** provides additional advantages
+
+**Requirements:**
+- Business plan showing potential for 10+ jobs and €1M+ turnover
+- Enterprise Ireland evaluation and approval
+
+## Cost of Living Reality Check 💰
+
+**Critical budget planning for your November baby:** Full family expense breakdown.
+
+### Monthly Family Costs (Family of 3+ by 2025)
+
+#### 🇦🇪 Dubai - MOST AFFORDABLE
+**Total Monthly: $6,670 USD**
+- **Rent (2-3BR):** $2,125 (AED 7,800)
+- **Living expenses:** $4,546 family of four baseline
+- **Utilities:** $160 (DEWA + internet)
+- **Healthcare:** $300-500 (excellent private insurance)
+- **Childcare/Schools:** $1,250-2,500 (international nursery/pre-school)
+
+**Annual Total:** ~$80k USD family expenses
+**Net after expenses:** £94k+ take-home (vs £27k in UK after all costs)
+
+#### 🇸🇬 Singapore - PREMIUM PRICING
+**Total Monthly: $12,575 SGD ($9,400 USD)**
+- **Rent (family-sized):** $7,238 SGD for 3-4BR
+- **Living expenses:** $5,337 SGD family baseline
+- **Utilities:** $200 SGD
+- **Healthcare:** $400-600 SGD (world-class system)
+- **Childcare/Schools:** $2,000-3,000 SGD (international standards)
+
+**Annual Total:** ~$113k USD family expenses
+**Net after expenses:** £89k+ take-home (still excellent vs UK)
+
+#### 🇮🇪 Ireland (Dublin) - EU PREMIUM
+**Total Monthly: €7,288 ($7,800 USD)**
+- **Rent (family-sized):** €2,800-3,500 for 2-3BR
+- **Living expenses:** €3,488 family baseline
+- **Utilities:** €270
+- **Healthcare:** €200-400 (excellent public + private options)
+- **Childcare:** €1,276 (crèche costs significant)
+
+**Annual Total:** ~$94k USD family expenses
+**Net after expenses:** £89k+ take-home (including tax savings)
+
+### Cost Comparison Summary:
+1. **Dubai:** Lowest total costs, highest net income retention
+2. **Ireland:** Moderate costs, EU benefits, familiar culture
+3. **Singapore:** Highest costs but world-class everything
+
+### Hidden Costs to Consider:
+- **International schools:** Start planning 2-3 years before needed
+- **Healthcare insurance:** Mandatory in Dubai/Singapore, optional in Ireland
+- **Annual flights home:** Budget £3-5k annually for UK family visits
+- **Currency exchange:** Factor in GBP/USD/EUR fluctuations
+- **Setup costs:** Initial £10-20k for international relocation
+
+**Financial Reality:** Even with higher living costs, you'll net £60-95k more annually in any target country vs staying in UK.
