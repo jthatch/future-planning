@@ -1,5 +1,15 @@
 # 2024 Tax Analysis
 
+## Key Takeaways 📊
+• Business turnover: £298,600
+• Take-home income: £120,888 (after all taxes)
+• Total taxes paid: £101,201 (33.9% of turnover)
+• Government takes £1 for every £3 earned
+• Corporation tax: £48,189 (16.1% of turnover)
+• Personal taxes: £53,012 (30.4% of personal income)
+• Effective tax rate on business revenue: 33.9%
+• Personal allowance eliminated due to high income
+
 ## Overview
 Analysis of tax returns for the 2023-24 tax year (ending 5 April 2024).
 
