@@ -179,4 +179,160 @@ Sample of gambling/gaming-related domains found on MissDomain infrastructure:
 
 ---
 
+# ChampWins.ca Investigation Report
+
+## Executive Summary - Key Findings
+
+• **Domain:** champwins.ca (Canadian online casino, potential competitor)
+• **Registration Date:** 2025-08-18 (Very recent registration, 5 days after catspin.de)
+• **Current Status:** Active Canadian online casino and sportsbook
+• **Hosting:** Cloudflare (CDN) with nameservers blair.ns.cloudflare.com, troy.ns.cloudflare.com
+• **Technology:** Tailwind CSS, JavaScript, SSL encryption
+• **Privacy:** Fully privacy protected via CentralNic Canada Inc
+• **Business Entity:** ChampWins Gaming Ltd (claimed)
+• **License:** Claims Anjouan Gaming License #8048/JAZ (verification needed)
+• **Red Flags:**
+  - Extremely recent registration (August 2025)
+  - Complete privacy protection obscuring ownership
+  - Similar timeline to catspin.de registration
+  - License number format inconsistent with Anjouan system
+
+## Detailed ChampWins.ca Analysis
+
+### 1. Domain Registration Analysis
+
+**champwins.ca Registration Details:**
+- **Registrar:** CentralNic Canada Inc (via Hexonet)
+- **Creation Date:** 2025-08-18T13:08:36Z
+- **Last Updated:** 2025-08-23T13:12:21Z
+- **Expiry Date:** 2026-08-18T13:08:36Z (1-year registration)
+- **Nameservers:** 
+  - blair.ns.cloudflare.com
+  - troy.ns.cloudflare.com
+- **Status:** clientTransferProhibited, serverTransferProhibited
+- **Privacy:** Complete WHOIS privacy protection (all details redacted)
+
+**Timing Analysis:**
+- **catspin.de registered:** 2025-08-13
+- **champwins.ca registered:** 2025-08-18 
+- **Gap:** 5 days apart (potential coordinated campaign)
+
+### 2. Hosting Infrastructure Analysis
+
+**Current Hosting:**
+- **IP Addresses:** 172.67.194.32, 104.21.20.200
+- **CDN Provider:** Cloudflare, Inc.
+- **Network Range:** 172.64.0.0/13 (Cloudflare)
+- **Location:** San Francisco, CA, US (Cloudflare infrastructure)
+- **Contact:** abuse@cloudflare.com
+
+**Technical Headers:**
+- **Server:** Cloudflare
+- **HTTP/2 Protocol:** Supported
+- **Cache:** Dynamic content with public, max-age=0
+- **Security:** Access-control-allow-origin: *
+
+### 3. Registrar Profile - CentralNic Canada Inc
+
+**Company Overview:**
+- **Name:** CentralNic Canada Inc
+- **Parent:** CentralNic organization (28+ years experience)
+- **Specialization:** .CA domain registrations
+- **Certifications:** ISO 9001:2015, ISO/IEC 27001:2022, ISO 22301:2019
+- **Contact:** abuse@key-systems.net, +49.68949396x850
+
+### 4. Business Operations Analysis
+
+**Website Content:**
+- **Business Type:** Online casino and sportsbook
+- **Target Market:** Canadian players (CAD currency)
+- **Features:** 3,000+ slots, live casino, sports betting
+- **Bonus:** 100% up to C$600 + 10 free spins
+- **Support:** Phone 1-888-230-3505, 24/7 live chat
+
+**Claimed Corporate Information:**
+- **Entity:** ChampWins Gaming Ltd
+- **License:** Anjouan Gaming License #8048/JAZ
+- **Copyright:** © 2025 ChampWins Casino
+- **Headquarters:** Licensed in Anjouan, Comoros
+
+### 5. License Verification Issues
+
+**Licensing Discrepancies:**
+- **Claimed License:** 8048/JAZ (old Curacao format)
+- **Claimed Authority:** Anjouan Gaming Authority
+- **Problem:** License number format (8048/JAZ) is inconsistent with Anjouan system
+- **Status:** License authenticity questionable
+
+**Anjouan System Notes:**
+- Anjouan uses different license numbering
+- 8048/JAZ format is associated with old Curacao system
+- Official Anjouan register should be checked for verification
+
+### 6. Related Domain Network Analysis
+
+**Similar Domain Patterns Found:**
+- **champwin.biz:** Russian-language casino site
+- **en.champion.casino:** Champion gaming system official site
+- **championcasinoslots.com:** Slot gaming strategies
+
+**Champion Network:**
+- **Champion Soft Pro:** Gaming software provider
+- **Markets:** Strong presence in Russian-speaking regions
+- **Features:** Cryptocurrency payments, 10+ languages
+- **Business Model:** CPA, RevShare, and hybrid affiliate models
+
+### 7. Competitive Analysis
+
+**Canadian Casino Market:**
+- **Market Size:** 400+ online casinos operating in Canada
+- **Top Competitors:** AllySpin, Jackpot City, Spin Casino, PlayOJO
+- **Position:** New entrant (August 2025)
+- **Differentiation:** Hockey-themed Canadian focus
+
+### 8. Risk Assessment
+
+**Technical Risks:**
+- Low (professional website, SSL encryption)
+
+**Business/Legal Risks:**
+- **High trademark/brand similarity risks** if competing with similar names
+- **Licensing authenticity concerns** (license format mismatch)
+- **Recent registration pattern** suggests potential coordinated activity
+- **Complete privacy protection** obscures beneficial ownership
+
+### 9. Comparison with catspin.de
+
+**Similarities:**
+- Both registered in August 2025 (5 days apart)
+- Both use complete privacy protection
+- Both are online casino/gaming operations
+- Both professional website launches immediately after registration
+
+**Differences:**
+- champwins.ca targets Canadian market vs German market
+- Different hosting (Cloudflare vs MissDomain Group)
+- Different registrars (CentralNic Canada vs Namecheap)
+- Different claimed licensing (Anjouan vs active operations)
+
+---
+
+## Technical Contact Points
+
+**Domain Registrar:**
+- CentralNic Canada Inc
+- Email: abuse@key-systems.net
+- Phone: +49.68949396x850
+
+**CDN/Hosting Provider:**
+- Cloudflare, Inc.
+- Email: abuse@cloudflare.com
+- Phone: +1-650-319-8930
+
+**Licensing Authority (Claimed):**
+- Anjouan Gaming Authority
+- Verification needed for license #8048/JAZ
+
+---
+
 *Investigation completed: 2025-09-05*
