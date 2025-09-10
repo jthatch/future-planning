@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Speed Games</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: #0a0a0a;
+            color: #00ff41;
+            overflow-x: hidden;
+            user-select: none;
+        }
+        
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+            margin-bottom: 10px;
+        }
+        
+        .game-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .game-btn {
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            border: 2px solid #00ff41;
+            color: #00ff41;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            min-width: 150px;
+        }
+        
+        .game-btn:hover {
+            background: linear-gradient(135deg, #333, #555);
+            box-shadow: 0 0 15px #00ff41;
+        }
+        
+        .game-btn.active {
+            background: linear-gradient(135deg, #00ff41, #00cc33);
+            color: #0a0a0a;
+            box-shadow: 0 0 20px #00ff41;
+        }
+        
+        .game-container {
+            width: 100%;
+            max-width: 800px;
+            min-height: 500px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .game-container.active {
+            display: flex;
+        }
+        
+        .click-button {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            border: 4px solid #00ff41;
+            color: #00ff41;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .click-button:hover {
+            background: linear-gradient(135deg, #333, #555);
+            box-shadow: 0 0 25px #00ff41;
+            transform: scale(1.05);
+        }
+        
+        .click-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 35px #00ff41;
+        }
+        
+        .stats {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        
+        .stats .big-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+            margin: 10px 0;
+        }
+        
+        .reaction-screen {
+            width: 100%;
+            height: 400px;
+            border: 4px solid #00ff41;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+            margin-bottom: 30px;
+        }
+        
+        .reaction-screen.waiting {
+            background: #1a1a1a;
+            color: #00ff41;
+        }
+        
+        .reaction-screen.ready {
+            background: #cc0000;
+            color: #ffffff;
+        }
+        
+        .reaction-screen.go {
+            background: #00ff41;
+            color: #0a0a0a;
+        }
+        
+        .targets-area {
+            width: 100%;
+            height: 500px;
+            border: 4px solid #00ff41;
+            border-radius: 12px;
+            position: relative;
+            background: #1a1a1a;
+            margin-bottom: 30px;
+        }
+        
+        .target {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            border: 2px solid #fff;
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .target:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px #ff4444;
+        }
+        
+        .target:active {
+            transform: scale(0.8);
+        }
+        
+        .results {
+            background: #1a1a1a;
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .reset-btn {
+            background: linear-gradient(135deg, #333, #555);
+            border: 2px solid #00ff41;
+            color: #00ff41;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            margin: 10px;
+        }
+        
+        .reset-btn:hover {
+            background: linear-gradient(135deg, #555, #777);
+            box-shadow: 0 0 15px #00ff41;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            border: 2px solid #fff;
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .history-panel {
+            background: #1a1a1a;
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            max-height: 200px;
+            overflow-y: auto;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #333;
+            font-size: 14px;
+        }
+        
+        .history-item:last-child {
+            border-bottom: none;
+        }
+        
+        .global-reset {
+            background: linear-gradient(135deg, #cc0000, #ff4444);
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            margin: 20px 10px;
+        }
+        
+        .global-reset:hover {
+            background: linear-gradient(135deg, #ff4444, #ff6666);
+            box-shadow: 0 0 15px #ff4444;
+        }
+        
+        .instructions {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #aaa;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .click-button {
+                width: 250px;
+                height: 250px;
+                font-size: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .game-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .targets-area {
+                height: 400px;
+            }
+            
+            .target {
+                width: 35px;
+                height: 35px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CLICK SPEED GAMES</h1>
+            <button class="global-reset" onclick="resetAllProgress()">RESET ALL PROGRESS</button>
+        </div>
+        
+        <div id="notification" class="notification"></div>
+        
+        <div class="game-selector">
+            <button class="game-btn active" onclick="switchGame('doubleclick')">DOUBLE CLICK</button>
+            <button class="game-btn" onclick="switchGame('reaction')">REACTION TIME</button>
+            <button class="game-btn" onclick="switchGame('placement')">PLACEMENT CLICK</button>
+        </div>
+        
+        <!-- Double Click Speed Game -->
+        <div id="doubleclick-game" class="game-container active">
+            <div class="instructions">
+                Click the button twice as quickly as possible. Your double-click speed will be measured.
+            </div>
+            <div class="click-button" onclick="handleDoubleClick()">
+                <span>DOUBLE CLICK ME</span>
+            </div>
+            <div class="stats">
+                <div>Best Time: <span class="big-number" id="best-double">--</span></div>
+                <div>Last Time: <span id="last-double">--</span></div>
+                <div>Attempts: <span id="attempts-double">0</span></div>
+            </div>
+            <div class="history-panel" id="double-history"></div>
+            <button class="reset-btn" onclick="resetDoubleClick()">RESET STATS</button>
+        </div>
+        
+        <!-- Reaction Time Game -->
+        <div id="reaction-game" class="game-container">
+            <div class="instructions">
+                Click START, wait for RED screen, then click as soon as it turns GREEN!
+            </div>
+            <div class="reaction-screen waiting" onclick="handleReactionClick()" id="reaction-screen">
+                <span id="reaction-text">CLICK TO START</span>
+            </div>
+            <div class="stats">
+                <div>Best Time: <span class="big-number" id="best-reaction">--</span></div>
+                <div>Last Time: <span id="last-reaction">--</span></div>
+                <div>Attempts: <span id="attempts-reaction">0</span></div>
+            </div>
+            <div class="history-panel" id="reaction-history"></div>
+            <button class="reset-btn" onclick="resetReaction()">RESET STATS</button>
+        </div>
+        
+        <!-- Placement Click Game -->
+        <div id="placement-game" class="game-container">
+            <div class="instructions">
+                Click all 10 targets as quickly as possible. Individual and total times will be recorded.
+            </div>
+            <div class="targets-area" id="targets-area"></div>
+            <div class="stats">
+                <div>Best Total: <span class="big-number" id="best-placement">--</span></div>
+                <div>Last Total: <span id="last-placement">--</span></div>
+                <div>Games: <span id="attempts-placement">0</span></div>
+            </div>
+            <div class="history-panel" id="placement-history"></div>
+            <div class="results" id="placement-results" style="display: none;"></div>
+            <button class="reset-btn" onclick="startPlacementGame()">START GAME</button>
+            <button class="reset-btn" onclick="resetPlacement()">RESET STATS</button>
+        </div>
+    </div>
+
+    <script>
+        // Game state with localStorage integration
+        let gameState = {
+            doubleClick: {
+                firstClick: null,
+                best: null,
+                attempts: 0,
+                history: []
+            },
+            reaction: {
+                state: 'waiting',
+                startTime: null,
+                readyTime: null,
+                best: null,
+                attempts: 0,
+                history: []
+            },
+            placement: {
+                gameActive: false,
+                currentTarget: 0,
+                gameStartTime: null,
+                targetTimes: [],
+                best: null,
+                attempts: 0,
+                history: []
+            }
+        };
+
+        // LocalStorage functions
+        function loadGameData() {
+            const saved = localStorage.getItem('clickSpeedGames');
+            if (saved) {
+                const data = JSON.parse(saved);
+                gameState.doubleClick.best = data.doubleClick?.best || null;
+                gameState.doubleClick.attempts = data.doubleClick?.attempts || 0;
+                gameState.doubleClick.history = data.doubleClick?.history || [];
+                gameState.reaction.best = data.reaction?.best || null;
+                gameState.reaction.attempts = data.reaction?.attempts || 0;
+                gameState.reaction.history = data.reaction?.history || [];
+                gameState.placement.best = data.placement?.best || null;
+                gameState.placement.attempts = data.placement?.attempts || 0;
+                gameState.placement.history = data.placement?.history || [];
+            }
+            updateAllDisplays();
+        }
+
+        function saveGameData() {
+            const dataToSave = {
+                doubleClick: {
+                    best: gameState.doubleClick.best,
+                    attempts: gameState.doubleClick.attempts,
+                    history: gameState.doubleClick.history.slice(-10) // Keep last 10
+                },
+                reaction: {
+                    best: gameState.reaction.best,
+                    attempts: gameState.reaction.attempts,
+                    history: gameState.reaction.history.slice(-10)
+                },
+                placement: {
+                    best: gameState.placement.best,
+                    attempts: gameState.placement.attempts,
+                    history: gameState.placement.history.slice(-10)
+                }
+            };
+            localStorage.setItem('clickSpeedGames', JSON.stringify(dataToSave));
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function updateAllDisplays() {
+            // Update double click
+            document.getElementById('best-double').textContent = gameState.doubleClick.best ? formatTime(gameState.doubleClick.best) : '--';
+            document.getElementById('attempts-double').textContent = gameState.doubleClick.attempts;
+            updateHistory('double', gameState.doubleClick.history);
+
+            // Update reaction
+            document.getElementById('best-reaction').textContent = gameState.reaction.best ? formatTime(gameState.reaction.best) : '--';
+            document.getElementById('attempts-reaction').textContent = gameState.reaction.attempts;
+            updateHistory('reaction', gameState.reaction.history);
+
+            // Update placement
+            document.getElementById('best-placement').textContent = gameState.placement.best ? formatTime(gameState.placement.best) : '--';
+            document.getElementById('attempts-placement').textContent = gameState.placement.attempts;
+            updateHistory('placement', gameState.placement.history);
+        }
+
+        function updateHistory(gameType, history) {
+            const historyElement = document.getElementById(gameType + '-history');
+            if (!history.length) {
+                historyElement.innerHTML = '<div style="text-align: center; color: #666;">No games played yet</div>';
+                return;
+            }
+            
+            let html = '<div style="text-align: center; font-weight: 600; margin-bottom: 10px;">Recent Games</div>';
+            history.slice(-5).reverse().forEach((entry, index) => {
+                html += `<div class="history-item">
+                    <span>#${history.length - index}</span>
+                    <span>${formatTime(entry.time)}</span>
+                    <span>${new Date(entry.timestamp).toLocaleDateString()}</span>
+                </div>`;
+            });
+            historyElement.innerHTML = html;
+        }
+
+        function switchGame(game) {
+            document.querySelectorAll('.game-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.game-container').forEach(container => container.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(game + '-game').classList.add('active');
+        }
+
+        function formatTime(ms) {
+            if (ms < 1000) {
+                return ms.toFixed(1) + 'ms';
+            } else {
+                return (ms / 1000).toFixed(3) + 's';
+            }
+        }
+
+        // Double Click Game
+        function handleDoubleClick() {
+            const now = performance.now();
+            
+            if (gameState.doubleClick.firstClick === null) {
+                gameState.doubleClick.firstClick = now;
+            } else {
+                const timeDiff = now - gameState.doubleClick.firstClick;
+                gameState.doubleClick.attempts++;
+                
+                const isNewRecord = gameState.doubleClick.best === null || timeDiff < gameState.doubleClick.best;
+                
+                if (isNewRecord) {
+                    gameState.doubleClick.best = timeDiff;
+                    showNotification('🎉 NEW DOUBLE CLICK RECORD! ' + formatTime(timeDiff));
+                }
+                
+                // Add to history
+                gameState.doubleClick.history.push({
+                    time: timeDiff,
+                    timestamp: Date.now()
+                });
+                
+                document.getElementById('best-double').textContent = formatTime(gameState.doubleClick.best);
+                document.getElementById('last-double').textContent = formatTime(timeDiff);
+                document.getElementById('attempts-double').textContent = gameState.doubleClick.attempts;
+                
+                updateHistory('double', gameState.doubleClick.history);
+                saveGameData();
+                
+                gameState.doubleClick.firstClick = null;
+            }
+        }
+
+        function resetDoubleClick() {
+            gameState.doubleClick = {
+                firstClick: null,
+                best: null,
+                attempts: 0,
+                history: []
+            };
+            document.getElementById('best-double').textContent = '--';
+            document.getElementById('last-double').textContent = '--';
+            document.getElementById('attempts-double').textContent = '0';
+            updateHistory('double', []);
+            saveGameData();
+        }
+
+        // Reaction Time Game
+        function handleReactionClick() {
+            const now = performance.now();
+            const screen = document.getElementById('reaction-screen');
+            const text = document.getElementById('reaction-text');
+            
+            if (gameState.reaction.state === 'waiting') {
+                gameState.reaction.state = 'ready';
+                screen.className = 'reaction-screen ready';
+                text.textContent = 'WAIT FOR GREEN...';
+                
+                const delay = Math.random() * 9000 + 1000;
+                setTimeout(() => {
+                    if (gameState.reaction.state === 'ready') {
+                        gameState.reaction.state = 'go';
+                        gameState.reaction.readyTime = performance.now();
+                        screen.className = 'reaction-screen go';
+                        text.textContent = 'CLICK NOW!';
+                    }
+                }, delay);
+                
+            } else if (gameState.reaction.state === 'ready') {
+                gameState.reaction.state = 'waiting';
+                screen.className = 'reaction-screen waiting';
+                text.textContent = 'TOO EARLY! CLICK TO RESTART';
+                
+            } else if (gameState.reaction.state === 'go') {
+                const reactionTime = now - gameState.reaction.readyTime;
+                gameState.reaction.attempts++;
+                
+                const isNewRecord = gameState.reaction.best === null || reactionTime < gameState.reaction.best;
+                
+                if (isNewRecord) {
+                    gameState.reaction.best = reactionTime;
+                    showNotification('⚡ NEW REACTION RECORD! ' + formatTime(reactionTime));
+                }
+                
+                // Add to history
+                gameState.reaction.history.push({
+                    time: reactionTime,
+                    timestamp: Date.now()
+                });
+                
+                document.getElementById('best-reaction').textContent = formatTime(gameState.reaction.best);
+                document.getElementById('last-reaction').textContent = formatTime(reactionTime);
+                document.getElementById('attempts-reaction').textContent = gameState.reaction.attempts;
+                
+                updateHistory('reaction', gameState.reaction.history);
+                saveGameData();
+                
+                gameState.reaction.state = 'waiting';
+                screen.className = 'reaction-screen waiting';
+                text.textContent = 'GREAT! CLICK TO START AGAIN';
+            }
+        }
+
+        function resetReaction() {
+            gameState.reaction = {
+                state: 'waiting',
+                startTime: null,
+                readyTime: null,
+                best: null,
+                attempts: 0,
+                history: []
+            };
+            document.getElementById('best-reaction').textContent = '--';
+            document.getElementById('last-reaction').textContent = '--';
+            document.getElementById('attempts-reaction').textContent = '0';
+            document.getElementById('reaction-screen').className = 'reaction-screen waiting';
+            document.getElementById('reaction-text').textContent = 'CLICK TO START';
+            updateHistory('reaction', []);
+            saveGameData();
+        }
+
+        // Placement Click Game
+        function startPlacementGame() {
+            const area = document.getElementById('targets-area');
+            const results = document.getElementById('placement-results');
+            
+            area.innerHTML = '';
+            results.style.display = 'none';
+            
+            gameState.placement.gameActive = true;
+            gameState.placement.currentTarget = 0;
+            gameState.placement.targetTimes = [];
+            gameState.placement.gameStartTime = performance.now();
+            
+            // Generate 10 random target positions
+            const targets = [];
+            
+            for (let i = 0; i < 10; i++) {
+                let attempts = 0;
+                let x, y, valid;
+                
+                do {
+                    x = Math.random() * (area.clientWidth - 50) + 10;
+                    y = Math.random() * (area.clientHeight - 50) + 10;
+                    valid = true;
+                    
+                    for (let target of targets) {
+                        const dx = x - target.x;
+                        const dy = y - target.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 60) {
+                            valid = false;
+                            break;
+                        }
+                    }
+                    attempts++;
+                } while (!valid && attempts < 50);
+                
+                targets.push({ x, y });
+                
+                const target = document.createElement('div');
+                target.className = 'target';
+                target.style.left = x + 'px';
+                target.style.top = y + 'px';
+                target.textContent = (i + 1);
+                target.style.display = i === 0 ? 'flex' : 'none';
+                target.onclick = () => handleTargetClick(i);
+                area.appendChild(target);
+            }
+        }
+
+        function handleTargetClick(targetIndex) {
+            if (!gameState.placement.gameActive || targetIndex !== gameState.placement.currentTarget) {
+                return;
+            }
+            
+            const now = performance.now();
+            const clickTime = targetIndex === 0 ? 
+                now - gameState.placement.gameStartTime : 
+                now - gameState.placement.lastTargetTime;
+            
+            gameState.placement.targetTimes.push(clickTime);
+            gameState.placement.lastTargetTime = now;
+            gameState.placement.currentTarget++;
+            
+            const targets = document.querySelectorAll('.target');
+            targets[targetIndex].style.display = 'none';
+            
+            if (gameState.placement.currentTarget < 10) {
+                targets[gameState.placement.currentTarget].style.display = 'flex';
+            } else {
+                finishPlacementGame();
+            }
+        }
+
+        function finishPlacementGame() {
+            gameState.placement.gameActive = false;
+            gameState.placement.attempts++;
+            
+            const totalTime = gameState.placement.targetTimes.reduce((sum, time) => sum + time, 0);
+            
+            const isNewRecord = gameState.placement.best === null || totalTime < gameState.placement.best;
+            
+            if (isNewRecord) {
+                gameState.placement.best = totalTime;
+                showNotification('🎯 NEW PLACEMENT RECORD! ' + formatTime(totalTime));
+            }
+            
+            // Add to history
+            gameState.placement.history.push({
+                time: totalTime,
+                timestamp: Date.now()
+            });
+            
+            document.getElementById('best-placement').textContent = formatTime(gameState.placement.best);
+            document.getElementById('last-placement').textContent = formatTime(totalTime);
+            document.getElementById('attempts-placement').textContent = gameState.placement.attempts;
+            
+            updateHistory('placement', gameState.placement.history);
+            saveGameData();
+            
+            // Show individual results
+            const results = document.getElementById('placement-results');
+            let resultsHTML = '<h3>Individual Times:</h3>';
+            gameState.placement.targetTimes.forEach((time, index) => {
+                resultsHTML += `<div>Target ${index + 1}: ${formatTime(time)}</div>`;
+            });
+            results.innerHTML = resultsHTML;
+            results.style.display = 'block';
+        }
+
+        function resetPlacement() {
+            gameState.placement = {
+                gameActive: false,
+                currentTarget: 0,
+                gameStartTime: null,
+                targetTimes: [],
+                best: null,
+                attempts: 0,
+                history: []
+            };
+            document.getElementById('best-placement').textContent = '--';
+            document.getElementById('last-placement').textContent = '--';
+            document.getElementById('attempts-placement').textContent = '0';
+            document.getElementById('targets-area').innerHTML = '';
+            document.getElementById('placement-results').style.display = 'none';
+            updateHistory('placement', []);
+            saveGameData();
+        }
+
+        function resetAllProgress() {
+            if (confirm('Are you sure you want to reset ALL game progress? This cannot be undone!')) {
+                localStorage.removeItem('clickSpeedGames');
+                gameState.doubleClick = { firstClick: null, best: null, attempts: 0, history: [] };
+                gameState.reaction = { state: 'waiting', startTime: null, readyTime: null, best: null, attempts: 0, history: [] };
+                gameState.placement = { gameActive: false, currentTarget: 0, gameStartTime: null, targetTimes: [], best: null, attempts: 0, history: [] };
+                
+                document.getElementById('reaction-screen').className = 'reaction-screen waiting';
+                document.getElementById('reaction-text').textContent = 'CLICK TO START';
+                document.getElementById('targets-area').innerHTML = '';
+                document.getElementById('placement-results').style.display = 'none';
+                
+                updateAllDisplays();
+                showNotification('🔄 ALL PROGRESS RESET');
+            }
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', loadGameData);
+
+        // Prevent context menu on mobile
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        
+        // Optimize for mobile touch events
+        document.addEventListener('touchstart', function() {}, { passive: true });
+        document.addEventListener('touchend', function() {}, { passive: true });
+        
+        // Prevent double-tap zoom
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
